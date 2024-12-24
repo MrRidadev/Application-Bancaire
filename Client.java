@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class Client {
     private int id;
     private String nom;
@@ -49,5 +51,33 @@ public class Client {
                 ", adresse='" + adresse + '\'' +
                 ", numero='" + numero + '\'' +
                 '}';
+    }
+    static void MenuClient() {
+        System.out.println("--- Menu Client ---");
+        System.out.println("1. Ajouter un client");
+        System.out.println("2. Afficher un client");
+        System.out.println("3. Quitter");
+
+        Scanner scannere = new Scanner(System.in);
+        int choix = scannere.nextInt();
+
+        switch (choix) {
+            case 1:
+                System.out.println("Ajouter un client");
+
+                break;
+            case 2:
+                System.out.println("Afficher un client");
+
+                break;
+            case 3:
+                System.out.println("Retour au menu principal...");
+                break;
+            default:
+                System.out.println("Choix invalide. Veuillez réessayer.");
+                MenuClient();
+                break;
+        }
+        scannere.close();
     }
 }
