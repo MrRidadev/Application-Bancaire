@@ -6,6 +6,7 @@ abstract class Compte {
     private double solde;
     private String proprietaire;
     private static ArrayList<Compte> Comptes = new ArrayList<>();
+
     public Compte(int numero, double solde, String proprietaire) {
         this.numero = numero;
         this.solde = solde;
@@ -61,6 +62,7 @@ abstract class Compte {
                     break;
                 case 2:
                     System.out.println("Afficher un compte");
+                    AfficherCompte();
                     break;
                 case 3:
                     System.out.println("Associer un compte");
@@ -85,5 +87,17 @@ abstract class Compte {
         String proprietaire = scanner.nextLine();
         Compte compte = new CompteCourant(numero,solde,proprietaire);
         Comptes.add(compte);
+        System.out.println("Compte ajouté avec succès !");
+    }
+    static void AfficherCompte(){
+        if (Comptes.isEmpty()){
+            System.out.println("Aucun Compte Ajouter D'abord !");
+        }
+        else {
+            System.out.println("Liste des comptes : ");
+            for (Compte compte : Comptes) {
+                System.out.println(compte);
+            }
+        }
     }
 }

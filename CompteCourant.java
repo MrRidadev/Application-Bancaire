@@ -13,9 +13,7 @@ public class CompteCourant extends Compte {
     }
     @Override
     public String toString() {
-        return "CompteCourant{" +
-                "fraisBancaires=" + fraisBancaires +
-                '}';
+        return super.toString() ;
     }
 
 }
