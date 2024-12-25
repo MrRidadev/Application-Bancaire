@@ -68,7 +68,7 @@ abstract class Compte {
                     System.out.println("Associer un compte");
                     break;
                 case 4:
-                    System.out.println("Quitter");
+                    System.out.println("Retour au menu principal.");
                     break;
                 default:
                     System.out.println("Choix invalide. Veuillez réessayer.");
@@ -89,15 +89,48 @@ abstract class Compte {
         Comptes.add(compte);
         System.out.println("Compte ajouté avec succès !");
     }
-    static void AfficherCompte(){
-        if (Comptes.isEmpty()){
-            System.out.println("Aucun Compte Ajouter D'abord !");
-        }
-        else {
+    static void AfficherCompte() {
+        if (Comptes.isEmpty()) {
+            System.out.println("Aucun Compte Ajouté !");
+        } else {
             System.out.println("Liste des comptes : ");
             for (Compte compte : Comptes) {
                 System.out.println(compte);
             }
         }
     }
+
+    static void MenuOperateur() {
+        int choix;
+        do {
+            System.out.println("--- Menu Operateur ---");
+            System.out.println("1. Deposer");
+            System.out.println("2. Retirer");
+            System.out.println("3. Virement");
+            System.out.println("4. Quitter");
+
+            Scanner scannere = new Scanner(System.in);
+            System.out.print("Vous avez choisi : ");
+            choix = scannere.nextInt();
+
+            switch (choix) {
+                case 1: // Deposer
+                    System.out.println("Déposer de l'argent.");
+                    break;
+                case 2: // Retirer
+                    System.out.println("Retirer de l'argent.");
+                    break;
+                case 3: // Virement
+                    System.out.println("Effectuer un virement.");
+                    break;
+                case 4: // Quitter
+                    System.out.println("Retour au menu principal.");
+                    break;
+                default:
+                    System.out.println("Choix invalide, veuillez réessayer.");
+            }
+        } while (choix != 4);
+    }
+
+
 }

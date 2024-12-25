@@ -77,7 +77,7 @@ public class Client {
                     AfficherClient();
                     break;
                 case 3:
-                    System.out.println("Quitter");
+                    System.out.println("Retour au menu principal.");
                     break;
                 default:
                     System.out.println("Choix invalide. Veuillez réessayer.");
