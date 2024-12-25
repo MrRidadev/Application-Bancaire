@@ -17,15 +17,14 @@ public class Bancaire {
         int choix;
         Scanner scannere = new Scanner(System.in);
 
-
-
         do {
             MenuPrincipal();
             System.out.print("Bienvenue dans le Bancaire Entrer votre choix :");
              choix = scannere.nextInt();
+            scannere.nextLine();
             switch (choix){
                 case 1://Gérer Clients
-                    GereClient(choix);
+                    Client.MenuClient();
                     break;
                 case 2://Gérer Comptes
                     break;
@@ -43,29 +42,7 @@ public class Bancaire {
 
     }
 
-    static void GereClient(int choixOption) {
-        Client.MenuClient();
-        System.out.print("Entrer votre choix :");
-        Scanner scannere = new Scanner(System.in);
-        choixOption = scannere.nextInt();
 
-
-
-        do {
-            switch (choixOption) {
-                case 1:
-                    System.out.println("Client ajouté avec succès !");
-                    break;
-                case 2:
-                    System.out.println("Voici les informations du client : ...");
-                    break;
-                default:
-                    System.out.println("Option inconnue.");
-                    break;
-            }
-        }while (choixOption != 3);
-
-    }
 
 
 }

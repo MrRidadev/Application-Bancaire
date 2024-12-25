@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Client {
@@ -6,9 +7,10 @@ public class Client {
     private String prenom;
     private String email;
     private String adresse;
-    private String numero;
+    private int numero;
+    private static ArrayList<Client> clients = new ArrayList<>();
 
-    public Client(int id, String nom, String prenom, String email, String adresse, String numero) {
+    public Client(int id, String nom, String prenom, String email, String adresse, int numero) {
         this.id = id;
         this.nom = nom;
         this.prenom = prenom;
@@ -37,7 +39,7 @@ public class Client {
         return adresse;
     }
 
-    public String getNumero() {
+    public int getNumero() {
         return numero;
     }
 
@@ -53,31 +55,71 @@ public class Client {
                 '}';
     }
     static void MenuClient() {
+        int choix;
+        do{
         System.out.println("--- Menu Client ---");
         System.out.println("1. Ajouter un client");
         System.out.println("2. Afficher un client");
         System.out.println("3. Quitter");
 
         Scanner scannere = new Scanner(System.in);
-        int choix = scannere.nextInt();
+        System.out.print("Vous avez choisi : ");
+        choix = scannere.nextInt();
+        scannere.nextLine();
 
-        switch (choix) {
-            case 1:
-                System.out.println("Ajouter un client");
+            switch (choix) {
+                case 1:
+                    System.out.println("Ajouter un client");
+                    AjouterClient();
+                    break;
+                case 2:
+                    System.out.println("Afficher un client");
+                    AfficherClient();
+                    break;
+                case 3:
+                    System.out.println("Retour au menu principal...");
+                    break;
 
-                break;
-            case 2:
-                System.out.println("Afficher un client");
+                default:
+                    System.out.println("Choix invalide. Veuillez réessayer.");
 
-                break;
-            case 3:
-                System.out.println("Retour au menu principal...");
-                break;
-            default:
-                System.out.println("Choix invalide. Veuillez réessayer.");
-                MenuClient();
-                break;
+                    break;
+            }
+        }while (choix!=3);
+
+    }
+
+    static void AjouterClient(){
+        int id = clients.size()+1;
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter nom de client : ");
+        String nom = scanner.nextLine();
+        System.out.println("Enter prenom de client : ");
+        String prenom= scanner.nextLine();
+        System.out.println("Enter email(@gmail.com) de client : ");
+        String email = scanner.nextLine();
+        System.out.println("Enter numero de client : ");
+        int numero = scanner.nextInt();
+        scanner.nextLine();
+        System.out.println("Enter Address de client : ");
+        String adresse  = scanner.nextLine();
+        Client cl = new Client(id,nom,prenom,email,adresse,numero);
+        clients.add(cl);
+        System.out.println("Client ajouté avec succès !");
+
+    }
+    static void AfficherClient(){
+        if (clients.isEmpty()){
+            System.out.println("Aucun Client Ajouter D'abord !");
         }
-        scannere.close();
+        else {
+            System.out.println("Liste des clients : ");
+            for (Client client : clients) {
+                System.out.println(client);
+            }
+        }
+
+
+
     }
 }
