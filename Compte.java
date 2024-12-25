@@ -5,6 +5,7 @@ abstract class Compte {
     private int numero;
     private double solde;
     private String proprietaire;
+    private Client client;
     private static ArrayList<Compte> Comptes = new ArrayList<>();
 
     public Compte(int numero, double solde, String proprietaire) {
@@ -32,6 +33,12 @@ abstract class Compte {
 
     public void setProprietaire(String proprietaire) {
         this.proprietaire = proprietaire;
+    }
+    public Client getClient() {
+        return client;
+    }
+    public void setClient(Client client) {
+        this.client = client;
     }
 
     @Override
@@ -135,6 +142,14 @@ abstract class Compte {
             }
         } while (choix != 5);
     }
+    public void Déposer(double montant){
+        if (montant > 0) {
+            this.solde += montant;
+            System.out.println("Dépôt réussi. Nouveau solde : " + solde);
+        } else {
+            System.out.println("Montant invalide.");
+        }
 
+    }
 
 }
