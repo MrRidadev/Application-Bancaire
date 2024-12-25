@@ -27,6 +27,7 @@ public class Bancaire {
                     Client.MenuClient();
                     break;
                 case 2://Gérer Comptes
+                    Compte.MenuCompte();
                     break;
                 case 3://Gérer Operations
                     break;

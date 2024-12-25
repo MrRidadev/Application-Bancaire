@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 abstract class Compte {
     private int numero;
     private double solde;
@@ -37,5 +39,36 @@ abstract class Compte {
                 ", solde=" + solde +
                 ", proprietaire='" + proprietaire + '\'' +
                 '}';
+    }
+
+    static void MenuCompte(){
+        int choix;
+        do{
+        System.out.println("--- Menu Compte ---");
+        System.out.println("1. Ajouter un compte");
+        System.out.println("2. Afficher un compte");
+        System.out.println("3. Associer un compte");
+        System.out.println("4. Quitter");
+            Scanner scannere = new Scanner(System.in);
+            System.out.print("Vous avez choisi : ");
+            choix = scannere.nextInt();
+            scannere.nextLine();
+            switch (choix) {
+                case 1:
+                    System.out.println("Ajouter un compte");
+                    break;
+                case 2:
+                    System.out.println("Afficher un compte");
+                    break;
+                case 3:
+                    System.out.println("Associer un compte");
+                    break;
+                case 4:
+                    System.out.println("Quitter");
+                    break;
+                default:
+                    System.out.println("Choix invalide. Veuillez réessayer.");
+            }
+        }while (choix!=4);
     }
 }
