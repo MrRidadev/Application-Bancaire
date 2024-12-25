@@ -1,5 +1,7 @@
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class Client {
     private int id;
@@ -88,6 +90,13 @@ public class Client {
 
     }
 
+    public static boolean ValidationEmail(String email){
+        String rejex ="([\\w_-]{1,30}@\\w{1,10}\\.\\w{1,3})$";
+        Pattern pattern = Pattern.compile(rejex);
+        Matcher matcher = pattern.matcher(email);
+        return matcher.matches();
+    }
+
     static void AjouterClient(){
         int id = clients.size()+1;
         Scanner scanner = new Scanner(System.in);
@@ -95,8 +104,15 @@ public class Client {
         String nom = scanner.nextLine();
         System.out.println("Enter prenom de client : ");
         String prenom= scanner.nextLine();
+        boolean valide;
+        String email;
+        do{
         System.out.println("Enter email(@gmail.com) de client : ");
-        String email = scanner.nextLine();
+        email = scanner.nextLine();
+        valide = ValidationEmail(email);
+        if (!valide){
+            System.out.println("structure email invalide!!");
+        }}while (!valide);
         System.out.println("Enter numero de client : ");
         int numero = scanner.nextInt();
         scanner.nextLine();
