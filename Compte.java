@@ -107,7 +107,8 @@ abstract class Compte {
             System.out.println("1. Deposer");
             System.out.println("2. Retirer");
             System.out.println("3. Virement");
-            System.out.println("4. Quitter");
+            System.out.println("4.Afficher L'historique");
+            System.out.println("5. Quitter");
 
             Scanner scannere = new Scanner(System.in);
             System.out.print("Vous avez choisi : ");
@@ -123,13 +124,16 @@ abstract class Compte {
                 case 3: // Virement
                     System.out.println("Effectuer un virement.");
                     break;
-                case 4: // Quitter
+                case 4: // Afficher L'hostorique
+                    System.out.println("L'hstorique");
+                    break;
+                case 5: // Quitter
                     System.out.println("Retour au menu principal.");
                     break;
                 default:
                     System.out.println("Choix invalide, veuillez réessayer.");
             }
-        } while (choix != 4);
+        } while (choix != 5);
     }
 
 

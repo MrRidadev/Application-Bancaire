@@ -33,6 +33,7 @@ public class Bancaire {
                     Compte.MenuOperateur();
                     break;
                 case 4://Filtrage
+                    CompteCourant.MenuFiltrage();
                     break;
                 case 5:// Quitter
                     break;
