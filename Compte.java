@@ -1,10 +1,11 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 abstract class Compte {
     private int numero;
     private double solde;
     private String proprietaire;
-
+    private static ArrayList<Compte> Comptes = new ArrayList<>();
     public Compte(int numero, double solde, String proprietaire) {
         this.numero = numero;
         this.solde = solde;
@@ -56,6 +57,7 @@ abstract class Compte {
             switch (choix) {
                 case 1:
                     System.out.println("Ajouter un compte");
+                    AjouterCompte();
                     break;
                 case 2:
                     System.out.println("Afficher un compte");
@@ -70,5 +72,18 @@ abstract class Compte {
                     System.out.println("Choix invalide. Veuillez réessayer.");
             }
         }while (choix!=4);
+    }
+    static void AjouterCompte(){
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter numero de compte : ");
+        int numero = scanner.nextInt();
+        scanner.nextLine();
+        System.out.println("Enter solde de compte : ");
+        double solde = scanner.nextDouble();
+        scanner.nextLine();
+        System.out.println("Enter proprietaire de compte : ");
+        String proprietaire = scanner.nextLine();
+        Compte compte = new CompteCourant(numero,solde,proprietaire);
+        Comptes.add(compte);
     }
 }
