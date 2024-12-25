@@ -142,8 +142,9 @@ abstract class Compte {
             }
         } while (choix != 5);
     }
+
     public void Déposer(double montant){
-        
+
         if (montant > 0) {
             this.solde += montant;
             System.out.println("Dépôt réussi. Nouveau solde : " + solde);
