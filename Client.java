@@ -10,7 +10,7 @@ public class Client {
     private String email;
     private String adresse;
     private int numero;
-    private static ArrayList<Client> clients = new ArrayList<>();
+    public static ArrayList<Client> clients = new ArrayList<>();
 
     public Client(int id, String nom, String prenom, String email, String adresse, int numero) {
         this.id = id;
