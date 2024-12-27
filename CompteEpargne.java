@@ -21,22 +21,23 @@ public class CompteEpargne extends Compte {
 
     @Override
     public String toString() {
-        return "CompteEpargne{" +
-                "tauxInteret=" + tauxInteret +
-                '}';
+        return super.toString();
     }
+
+
 
     public static void GestionCompteEpargne(){
         System.out.println("------ Ajouter Compte Epargne -------");
         System.out.println("1-Ajouter Compte Epargne");
         System.out.println("2-Afficher Compte Epargne");
         int choix  = scanner.nextInt();
+
         switch (choix){
             case 1:
               AjouterCompteEpargne();
                 break;
             case 2:
-              AfficherCompteEpargne();  
+              AfficherCompteEpargne();
                 break;
             default:
                 System.out.println("Choix invalide !!!");

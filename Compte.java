@@ -6,6 +6,8 @@ abstract class Compte {
     private double solde;
     private Client proprietaire;
     private static ArrayList<Compte> Comptes = new ArrayList<>();
+    private static ArrayList<Operation> oprations = new ArrayList<>();
+    static Scanner scanner = new Scanner(System.in);
 
     public Compte(int numero, double solde, Client proprietaire) {
         this.numero = numero;
@@ -108,15 +110,14 @@ abstract class Compte {
         } while (choix != 5);
     }
 
-    public void Déposer(double montant){
 
-        if (montant > 0) {
-            this.solde += montant;
-            System.out.println("Dépôt réussi. Nouveau solde : " + solde);
-        } else {
-            System.out.println("Montant invalide.");
+    static Client recherCompteCourant(int numero){
+        for (Client client : Client.clients){
+            if(client.getNumero()==numero){
+                return client;
+            }
         }
+        return null;
 
     }
-
 }
