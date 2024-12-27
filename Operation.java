@@ -56,6 +56,7 @@ public class Operation {
                 int numeroCompte = scanner.nextInt();
                 CompteCourant compteCourant = rechercherCompteCourant(numeroCompte);
                 if (compteCourant != null) {
+                    compteCourant.setSolde(compteCourant.getSolde() + montant);
                     Operation operation = new Operation(montant, type, compteCourant);
                     operations.add(operation);
                     System.out.println("Dépôt effectué avec succès.");
