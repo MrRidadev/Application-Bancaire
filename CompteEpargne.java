@@ -36,7 +36,7 @@ public class CompteEpargne extends Compte {
               AjouterCompteEpargne();
                 break;
             case 2:
-
+              AfficherCompteEpargne();  
                 break;
             default:
                 System.out.println("Choix invalide !!!");
@@ -76,5 +76,15 @@ public class CompteEpargne extends Compte {
         }
         return null;
 
+    }
+    static void AfficherCompteEpargne() {
+        if (compteEpargness.isEmpty()) {
+            System.out.println("Aucun Compte Ajouté !");
+        } else {
+            System.out.println("Liste des comptes : ");
+            for (CompteEpargne compteEpargne : compteEpargness) {
+                System.out.println(compteEpargne);
+            }
+        }
     }
 }
