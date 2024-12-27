@@ -6,7 +6,7 @@ abstract class Compte {
     private double solde;
     private Client proprietaire;
     private static ArrayList<Compte> Comptes = new ArrayList<>();
-    private static ArrayList<Operation> oprations = new ArrayList<>();
+
     static Scanner scanner = new Scanner(System.in);
 
     public Compte(int numero, double solde, Client proprietaire) {
@@ -74,41 +74,7 @@ abstract class Compte {
     }
 
 
-    static void MenuOperateur() {
-        int choix;
-        do {
-            System.out.println("--- Menu Operateur ---");
-            System.out.println("1. Deposer");
-            System.out.println("2. Retirer");
-            System.out.println("3. Virement");
-            System.out.println("4.Afficher L'historique");
-            System.out.println("5. Quitter");
 
-            Scanner scannere = new Scanner(System.in);
-            System.out.print("Vous avez choisi : ");
-            choix = scannere.nextInt();
-
-            switch (choix) {
-                case 1: // Deposer
-                    System.out.println("Déposer de l'argent.");
-                    break;
-                case 2: // Retirer
-                    System.out.println("Retirer de l'argent.");
-                    break;
-                case 3: // Virement
-                    System.out.println("Effectuer un virement.");
-                    break;
-                case 4: // Afficher L'hostorique
-                    System.out.println("L'hstorique");
-                    break;
-                case 5: // Quitter
-                    System.out.println("Retour au menu principal.");
-                    break;
-                default:
-                    System.out.println("Choix invalide, veuillez réessayer.");
-            }
-        } while (choix != 5);
-    }
 
 
     static Client recherCompteCourant(int numero){

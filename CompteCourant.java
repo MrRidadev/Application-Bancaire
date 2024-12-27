@@ -81,10 +81,6 @@ public class CompteCourant extends Compte {
 
 
 
-
-
-
-
     static void MenuFiltrage() {
         int choix;
         do {

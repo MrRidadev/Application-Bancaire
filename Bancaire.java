@@ -30,7 +30,7 @@ public class Bancaire {
                     Compte.MenuCompte();
                     break;
                 case 3://Gérer Operations
-                    Compte.MenuOperateur();
+                    Operation.MenuOperateur();
                     break;
                 case 4://Filtrage
                     CompteCourant.MenuFiltrage();
