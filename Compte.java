@@ -50,7 +50,7 @@ abstract class Compte {
         System.out.println("--- Menu Compte ---");
         System.out.println("1. Compte Courant");
         System.out.println("2. Compte Epargne");
-        System.out.println("4. Quitter");
+        System.out.println("3. Quitter");
             Scanner scannere = new Scanner(System.in);
             System.out.print("Vous avez choisi : ");
             choix = scannere.nextInt();
@@ -60,7 +60,7 @@ abstract class Compte {
                     CompteCourant.GestionCompteCourant();
                     break;
                 case 2:
-                    System.out.println("Afficher un compte");
+                    CompteEpargne.GestionCompteEpargne();
                     break;
                 case 3:
                     System.out.println("Retour au menu principal.");
@@ -68,7 +68,7 @@ abstract class Compte {
                 default:
                     System.out.println("Choix invalide. Veuillez réessayer.");
             }
-        }while (choix!=4);
+        }while (choix!=3);
     }
 
 
